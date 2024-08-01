@@ -50,7 +50,9 @@ search.addEventListener('input', function() {   //évenement à la saisie
                 // Affichage du synopsis    ---------------------------------------------------------------------------------------------------
                 let summary = document.createElement('p');
                 article.appendChild(summary);
-                summary.innerHTML = film.show.summary;
+                let cutSummary = film.show.summary.substring(0,150);  // permet de coupé le texte trop long: (0,150) étant le nombre de caractères affichés.
+                summary.innerHTML = cutSummary + '...';
+                
                 
             })
         }
